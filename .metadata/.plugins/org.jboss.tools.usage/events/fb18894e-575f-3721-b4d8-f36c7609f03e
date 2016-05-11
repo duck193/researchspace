@@ -1,0 +1,11 @@
+#Wed May 11 10:46:49 CDT 2016
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1462981609830
+c=0
+cmp=usage
+a=finishWizard
+cl=org.eclipse.egit.ui.internal.clone.GitCloneWizard
+v=2.1.1
+s=1

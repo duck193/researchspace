@@ -1,0 +1,11 @@
+#Wed May 11 14:28:22 CDT 2016
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1462994902380
+c=0
+cmp=usage
+a=finishWizard
+cl=org.eclipse.jdt.internal.junit.wizards.NewTestCaseCreationWizard
+v=2.1.1
+s=3
