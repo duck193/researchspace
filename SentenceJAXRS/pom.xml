@@ -22,7 +22,18 @@
 		<artifactId>SentenceAPP</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<scope>compile</scope>
-	</dependency>   
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.surefire</groupId>
+		<artifactId>surefire</artifactId>
+		<version>2.19.1</version>
+		<type>pom</type>
+	</dependency>
   </dependencies>
   <pluginRepositories>
       <!-- Configure WASdev repository -->
