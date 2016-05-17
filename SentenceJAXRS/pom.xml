@@ -34,6 +34,41 @@
 		<version>2.19.1</version>
 		<type>pom</type>
 	</dependency>
+	<dependency>
+		<groupId>com.restfuse</groupId>
+		<artifactId>com.eclipsesource.restfuse</artifactId>
+		<version>1.2.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.ibm.bluemix.deploymenttracker</groupId>
+		<artifactId>cf-java-app-tracker-client</artifactId>
+		<version>0.1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-catalina</artifactId>
+		<version>9.0.0.M4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-catalina-ws</artifactId>
+		<version>9.0.0.M4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-core</artifactId>
+		<version>9.0.0.M4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-jasper</artifactId>
+		<version>9.0.0.M4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-logging-juli</artifactId>
+		<version>9.0.0.M4</version>
+	</dependency>
   </dependencies>
   <pluginRepositories>
       <!-- Configure WASdev repository -->
@@ -52,6 +87,7 @@
   </pluginRepositories>    
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
   </properties>  
   <build>
     <plugins>  

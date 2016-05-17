@@ -10,6 +10,15 @@ import com.sentence.CountWords;
 @Produces("application/json")
 public class SentenceService {
 	
+	@Path("/running")
+	@GET
+	@Produces("application/json")
+	public Response serviceRunning() {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("ServiceRunning", "Service is Running");
+		return Response.status(200).entity(jsonObject).build();
+	}
+	
 	/**
 	 * GetUnsortedSentence
 	 **
@@ -59,4 +68,5 @@ public class SentenceService {
 			return Response.status(400).entity(jsonObject).build();	
 		}
 	}
+	
 }
