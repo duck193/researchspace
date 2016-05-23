@@ -1,0 +1,9 @@
+dojo-bootstrap-js=dojo/dojo.js
+dojo-css=dojo/resources/dojo.css
+dojo-deploy-location-option=ProjectSetupProperties.deploy.another.remote.cdn
+dojo-devicetheme-js=dojox/mobile/deviceTheme.js
+dojo-dijit-css=dijit/themes/dijit.css
+dojo-root=http\://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js
+dojo-source-metadata-root=C\:\\classes\\dojo-release-1.11.1
+dojo-theme-css=dijit/themes/tundra/tundra.css
+eclipse.preferences.version=1

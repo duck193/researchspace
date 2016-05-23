@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="var" path="WAS_LIBERRTY/com.ibm.json4j_1.0.12.jar"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/SentenceAPP"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
@@ -33,7 +34,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.ibm.ws.cftools.server.classPathProvider/IBM Bluemix Runtime"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/bootstrap-agent.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.crypto.ibmkeycert_1.0.12.jar"/>
-	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.json4j_1.0.12.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.rls.jdbc_1.0.12.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.tx.jta_1.0.12.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.tx.ltc_1.0.12.jar"/>
@@ -275,5 +275,19 @@
 	<classpathentry kind="var" path="WAS_LIBERRTY/com.ibm.ws.zos.logging_1.0.12.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/org.eclipse.osgi_3.11.0.jar"/>
 	<classpathentry kind="var" path="WAS_LIBERRTY/ws-launch.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-binarylogviewer.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-bluemixUtility.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-collectiveutil.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-configUtility.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-featurelist.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-featureManager.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-installUtility.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-isadc.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-javaagent.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-productutil.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-schemagen.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-securityutil.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-server.jar"/>
+	<classpathentry kind="var" path="WAS_LIBERTY_TOOLS/ws-serverSchemagen.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

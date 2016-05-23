@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<!-- <web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">-->
 	<display-name>Sentence-REST-Service</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+	<!-- 
+	<servlet>
+	    <servlet-name>CXFServlet</servlet-name>
+	    <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+	    <init-param>
+	        <param-name>javax.ws.rs.Application</param-name>
+	        <param-value>com.sentence.service.SingletonResourceClass</param-value>
+	    </init-param>
+	    <init-param>
+	        <param-name>com.ibm.json.java.JSONObject</param-name>
+	        <param-value>com.sentence.service.BodyWriter</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>CXFServlet</servlet-name>
+	    <url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	-->	
 	<servlet>
 	    <servlet-name>SentenceREST</servlet-name>
 	    <servlet-class>com.sentence.service.SentenceService</servlet-class>
@@ -19,4 +33,5 @@
 	    <servlet-name>SentenceREST</servlet-name>
 	    <url-pattern>/sentence/*</url-pattern>
 	</servlet-mapping>
+	
 </web-app>

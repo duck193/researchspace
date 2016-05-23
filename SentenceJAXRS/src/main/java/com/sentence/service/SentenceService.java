@@ -6,17 +6,15 @@ import javax.ws.rs.core.Response;
 import com.ibm.json.java.JSONObject;
 import com.sentence.CountWords;
 
-@Path("/sentenceservice")
-@Produces("application/json")
+@Path("/sentence")
+@Produces({"application/json, application/xml "})
 public class SentenceService {
 	
 	@Path("/running")
 	@GET
-	@Produces("application/json")
-	public Response serviceRunning() {
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("ServiceRunning", "Service is Running");
-		return Response.status(200).entity(jsonObject).build();
+	@Produces("application/xml")
+	public Response isServiceRunning() {
+		return Response.status(200).entity("<?xml version=\"1.0\" encoding=\"UTF-8\"?> <ServiceRunning>The server is up and running for SentenceService</ServiceRunning>").build();
 	}
 	
 	/**
@@ -31,9 +29,12 @@ public class SentenceService {
 	@Produces("application/json")
 	public Response getUnsortedSentence(@QueryParam("sentence") String sentence) {
 		if (sentence!=null) {
+			System.out.println("****** getUnsortedSentence");
+			System.out.println("****** --- sentence : " + sentence);
 			JSONObject jsonObject = new JSONObject();
 			CountWords cw = new CountWords(sentence);
 		  cw.getWords().forEach((k,v) -> jsonObject.put(k, v));
+		  System.out.println("****** --- JSON : " + jsonObject.toString());
 			return Response.status(200).entity(jsonObject).build();
 		}
 		else {
