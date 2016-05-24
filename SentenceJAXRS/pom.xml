@@ -30,65 +30,9 @@
 		<type>pom</type>
 	</dependency>
 	<dependency>
-		<groupId>com.restfuse</groupId>
-		<artifactId>com.eclipsesource.restfuse</artifactId>
-		<version>1.2.0</version>
-	</dependency>
-	<dependency>
-		<groupId>com.ibm.bluemix.deploymenttracker</groupId>
-		<artifactId>cf-java-app-tracker-client</artifactId>
-		<version>0.1.0</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat</groupId>
-		<artifactId>tomcat-catalina</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat</groupId>
-		<artifactId>tomcat-catalina-ws</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.embed</groupId>
-		<artifactId>tomcat-embed-core</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.embed</groupId>
-		<artifactId>tomcat-embed-jasper</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.embed</groupId>
-		<artifactId>tomcat-embed-logging-juli</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.embed</groupId>
-		<artifactId>tomcat-embed-el</artifactId>
-		<version>9.0.0.M4</version>
-	</dependency>
-	<dependency>
 		<groupId>com.ibm.websphere.appserver.api</groupId>
 		<artifactId>com.ibm.websphere.appserver.api.json</artifactId>
 		<version>1.0.12</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-bundle</artifactId>
-		<version>3.0.0-milestone2</version>
-	</dependency>
-	<dependency>
-		<groupId>com.ibm</groupId>
-		<artifactId>couchdb-scala_2.11</artifactId>
-		<version>0.7.2</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.maven</groupId>
-		<artifactId>tomcat-maven-plugin</artifactId>
-		<version>2.2</version>
-		<type>pom</type>
 	</dependency>
 	<dependency>
 		<groupId>org.apache.commons</groupId>
