@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<display-name>SentenceRS-REST-Service</display-name>
+	
+	<servlet>
+		<description>SentenceRS REST Service</description>
+	    <servlet-name>SentenceREST</servlet-name>
+	    <servlet-class>com.ibm.websphere.jaxrs.server.IBMRestServlet</servlet-class>
+	    <init-param>
+	        <param-name>javax.ws.rs.core.Application</param-name>
+	        <param-value>com.sentence.service.SentenceService</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>SentenceREST</servlet-name>
+	    <url-pattern>/sentence</url-pattern>
+	</servlet-mapping>
+
+</web-app>
