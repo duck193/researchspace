@@ -5,7 +5,30 @@
         "title": "Sentence Angular Application"
     },
     "paths": {
-        "/service": {
+        "/sentence/service/running": {
+            "get": {
+                "description": "Gets XML response returning a message the service is running\n",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "ArrayOfWords",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/WordMap"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/sentence/service/unsorted": {
             "get": {
                 "description": "Gets JSON containing all word occurances in a sentence.\n",
                 "parameters": [
@@ -14,6 +37,47 @@
                         "in": "query",
                         "description": "Sentence passed containing words to count",
                         "required": true,
+                        "type": "string",
+                        "format": "text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "ArrayOfWords",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/WordMap"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/sentence/service/sorted": {
+            "get": {
+                "description": "Gets JSON containing all word occurances in a sentence sorted.\n",
+                "parameters": [
+                    {
+                        "name": "sentence",
+                        "in": "query",
+                        "description": "Sentence passed containing words to count",
+                        "required": true,
+                        "type": "string",
+                        "format": "text"
+                    },
+                    {
+                        "name": "sorttype",
+                        "in": "query",
+                        "description": "Sort using (KEY or VALUE) default is KEY",
+                        "required": false,
                         "type": "string",
                         "format": "text"
                     }
