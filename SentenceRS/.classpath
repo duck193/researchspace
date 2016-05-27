@@ -16,7 +16,6 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/SentenceAPP"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
@@ -31,5 +30,6 @@
 	<classpathentry exported="true" kind="lib" path="C:/wlp/lib/com.ibm.ws.webcontainer.security_1.0.12.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/wlp/lib/com.ibm.ws.webcontainer_1.1.12.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/wlp/lib/com.ibm.ws.webcontainer31_1.0.12.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SentenceAPP"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
