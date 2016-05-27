@@ -12,11 +12,6 @@
       <version>2.2.8</version>
     </dependency>
     <dependency>
-      <groupId>com.joerichard.sentence</groupId>
-      <artifactId>SentenceAPP</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
@@ -79,6 +74,11 @@
     	<groupId>javax.servlet</groupId>
     	<artifactId>javax.servlet-api</artifactId>
     	<version>4.0.0-b01</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.joerichard.sentence</groupId>
+    	<artifactId>SentenceAPP</artifactId>
+    	<version>1.0.0</version>
     </dependency>
   </dependencies>
   <build>
