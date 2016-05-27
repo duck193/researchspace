@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Sentence Angular Application"
+    },
+    "paths": {
+        "/service": {
+            "get": {
+                "description": "Gets JSON containing all word occurances in a sentence.\n",
+                "parameters": [
+                    {
+                        "name": "sentence",
+                        "in": "query",
+                        "description": "Sentence passed containing words to count",
+                        "required": true,
+                        "type": "string",
+                        "format": "text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "ArrayOfWords",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/WordMap"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "WordMap": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "key value is a string of a word in the sentence"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "an Integer converted to a string"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "key containing error code"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "value continig error message body"
+                }
+            }
+        }
+    }
+}
