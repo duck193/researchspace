@@ -1,5 +1,6 @@
 package com.sentence;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -51,24 +52,24 @@ public class CountWords {
 	@SuppressWarnings("all")
 	public Map<String, Integer> mapSorter(Map<String, Integer> someMap, String sortType) {
 		List<Entry> entries = new LinkedList(someMap.entrySet());
+		HashMap sortedHashMap = new LinkedHashMap();
 		
 		// Original Comparator version
 		switch (sortType.toUpperCase()) {
 			case "KEY" :
-				//Collections.sort(entries, this.KEY);
-		        entries.sort((Entry o1, Entry o2) -> ((String)o1.getKey()).toLowerCase().compareTo(((String)o2.getKey()).toLowerCase()));
+				Collections.sort(entries, this.KEY);
 				break;
 	
 			case "VALUE" :
-				//Collections.sort(entries, this.VALUE);
-				entries.sort((Entry o1, Entry o2) ->((Integer)o1.getValue()) - ((Integer)o2.getValue()));
-		        break;
+				Collections.sort(entries, this.VALUE);
+        break;
 		}
-        // Here I am copying the sorted list in HashMap
-        // using LinkedHashMap to preserve the insertion order
-        HashMap sortedHashMap = new LinkedHashMap();
-        entries.forEach((Entry) -> sortedHashMap.put(Entry.getKey(), Entry.getValue()));
-        return sortedHashMap;
+    // Here I am copying the sorted list in HashMap
+    // using LinkedHashMap to preserve the insertion order
+		for (Entry pair : entries) {
+      sortedHashMap.put(pair.getKey(), pair.getValue());
+		}
+    return sortedHashMap;
 	}
 	
 	/**
