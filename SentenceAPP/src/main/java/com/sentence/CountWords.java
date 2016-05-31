@@ -28,6 +28,19 @@ public class CountWords {
 			String[] wordArray = removeSpecialChars(arrayData);
 			words.put(wordArray[0], ((words.containsKey(wordArray[0])) ? new Integer(words.get(wordArray[0])+wordArray.length) : new Integer(wordArray.length)));
 		}
+		Map<String, Integer> newWord = new HashMap<>();
+		for(String key : mapSorter(words, "KEY").keySet()) {
+			Integer value = words.get(key);
+			if(newWord.containsKey(key.toLowerCase())) {
+				Integer addTo = newWord.get(key.toLowerCase());
+				newWord.put(key.toLowerCase(), value+addTo);
+			}
+			else {
+				newWord.put(key.toLowerCase(), value);
+			}
+		}
+		words.clear();
+		words.putAll(newWord);
 	}
 	
 	private String[] removeSpecialChars(String input) {

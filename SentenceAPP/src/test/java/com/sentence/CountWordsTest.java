@@ -13,7 +13,7 @@ public class CountWordsTest {
 		
 	@Before
 	public void setUp() throws Exception {
-		cw = new CountWords("This is the time for all good test. What time is it?");
+		cw = new CountWords("This is the time for all good test. What time is it for this?");
 	}
 
 	@Test
@@ -30,7 +30,7 @@ public class CountWordsTest {
 	@Test
 	public void sortByValueIsCorrect() {
 		Map<String, Integer> sortedMap = cw.mapSorter(cw.getWords(), "VALUE");
-		assertTrue(sortedMap.get("is") == 2);
+		assertTrue(sortedMap.get("this") == 2);
 	}
 
 	@Test
@@ -38,4 +38,12 @@ public class CountWordsTest {
 		Map<String, Integer> sortedMap = cw.mapSorter(cw.getWords(), "KEY");
 		assertTrue(sortedMap.get("all") == 1);
 	}
+	
+	@Test
+	public void checkSortOrder() {
+		cw = new CountWords("This is that, That is this, thIs tHis this");
+		Map<String, Integer> sortedMap = cw.mapSorter(cw.getWords(), "VALUE");
+		assertTrue(sortedMap.get("this")==5);
+	}
+	
 }
