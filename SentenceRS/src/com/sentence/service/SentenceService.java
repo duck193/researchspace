@@ -22,7 +22,11 @@ public class SentenceService extends javax.ws.rs.core.Application {
 	@Produces(MediaType.APPLICATION_XML)
 	public Response isServiceRunning() {
 		return Response.status(200)
-				           .entity("<?xml version=\"1.0\" encoding=\"UTF-8\"?> <ServiceRunning>The server is up and running for SentenceService</ServiceRunning>").build();
+				           .entity("<?xml version=\"1.0\" encoding=\"UTF-8\"?> <ServiceRunning>The server is up and running for SentenceService</ServiceRunning>")
+				           .header("Access-Control-Allow-Orgin", "http://swagger.io")
+				           .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+				 					 .build();
+
 	}
 	
 	/**
@@ -43,7 +47,10 @@ public class SentenceService extends javax.ws.rs.core.Application {
 			CountWords cw = new CountWords(sentence);
 		  cw.getWords().forEach((k,v) -> jsonObject.put(k, v));
 		  System.out.println("****** --- JSON : " + jsonObject.toString());
-			return Response.status(200).entity(jsonObject).build();
+			return Response.status(200).entity(jsonObject)
+					           .header("Access-Control-Allow-Orgin", "http://swagger.io")
+					           .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+					 					 .build();
 		}
 		else {
 			JSONObject jsonObject = new JSONObject();
@@ -69,7 +76,10 @@ public class SentenceService extends javax.ws.rs.core.Application {
 			JSONObject jsonObject = new JSONObject();
 			CountWords cw = new CountWords(sentence);
 		  cw.mapSorter(cw.getWords(), sortType).forEach((k,v) -> jsonObject.put(k, v));
-			return Response.status(200).entity(jsonObject).build();
+			return Response.status(200).entity(jsonObject)
+          											 .header("Access-Control-Allow-Orgin", "http://swagger.io")
+        											 	 .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+        											 	 .build();
 		}
 		else {
 			JSONObject jsonObject = new JSONObject();
