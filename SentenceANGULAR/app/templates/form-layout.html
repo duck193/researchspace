@@ -1,4 +1,4 @@
-<form name="sentenceForm" ng-controller="SentenceController as sentenceCtrl" ng-submit="sentenceCtrl.checkWords(sentence)">
+<form name="sentenceForm" ng-controller="SentenceController as sentenceCtrl" ng-submit="sentenceCtrl.checkWords(sentence, sortType)">
 	<div id="sentenceFormLayout">
 	    <div id="description">Enter New Sentence and select sort type : 
 	        <input ng-model="sentenceCtrl.sortType" type="radio" name="sortType" id="KEY" value="KEY" checked>Key 
@@ -7,5 +7,11 @@
 	    <div id="sentenceBox"><input ng-model="sentenceCtrl.sentence" type="text" name="sentence" id="sentence" style="width:1000px;"/></div>
 	    <div id="submitButton"><input type="submit" value="Submit"/></div>
 	    <div id="messageDisplay"></div>
+	</div>
+	<div id="countedWords">
+		<h3>Counted Words</h3>
+		<div id="arrayDisplay" ng-repeat="word in words">
+			<div id="key">{{word.key}}</div><div id="value">{{word.value}}</div>
+		</div>
 	</div>
 </form>

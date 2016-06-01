@@ -3,11 +3,12 @@
  */
 (function(){
 	var app = angular.module('sentence', []);
-	
+
 	app.controller('SentenceController', ['$http', function($http){
 		this.sentence = {};
 		this.sentence.sortType = "KEY";
 		this.sentence.sentence = "";
+		this.wordArray = words;
 		
 		this.checkWords = function(sentence) {
 			$http.post('http://localhost:9080/SentenceRS-1.0/sentence/service/sorted', sentence)
@@ -19,7 +20,7 @@
 			   });
 		};
 	}]);
-	
+
 	/*-----------------------------------------------------------------------------------------*
 	 * <title-presentation/>
 	 *-----------------------------------------------------------------------------------------*/	
@@ -39,13 +40,14 @@
 			templateUrl: 'templates/form-layout.html',
 			controller:['$http', function($http) {
 				var sentence = this;
+				var wordArray = {};
 				
 				sentence.sortType = "KEY";
 				sentence.sentence = "";
 				
-				sentence.checkWords = function(sentence) {
-					$http.post('http://localhost:8080/SentenceWEB/countwords', sentence).success(function(data){
-						sentence = data; 
+				sentence.checkWords = function(sentence, sortType) {
+					$http.post('http://localhost:9080/SentenceRS-1.0/sentence/service/sorted', sentence, sortType).success(function(data){
+						sentence.words.push(data); 
 					});
 				};
 				
@@ -63,4 +65,12 @@
 			templateUrl: 'templates/word-count.html'
 		}
 	});
+	
+	/*-----------------------------------------------------------------------------------------*
+	 * Array words
+	 *-----------------------------------------------------------------------------------------*/ 
+	var words = {
+		key: "word",
+		value: "some value"	
+	}
 })();
