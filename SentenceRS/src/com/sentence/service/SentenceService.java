@@ -21,11 +21,13 @@ public class SentenceService extends javax.ws.rs.core.Application {
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public Response isServiceRunning() {
-		return Response.status(200)
+		return Response.ok()
 				           .entity("<?xml version=\"1.0\" encoding=\"UTF-8\"?> <ServiceRunning>The server is up and running for SentenceService</ServiceRunning>")
-				           .header("Access-Control-Allow-Orgin", "http://swagger.io")
-				           .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-				 					 .build();
+				           //.header("Access-Control-Allow-Orgin", "http://swagger.io")
+				           //.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+									 .header("Access-Control-Allow-Orgin", "*")
+								 	 .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")				           
+				           .build();
 
 	}
 	
@@ -47,9 +49,9 @@ public class SentenceService extends javax.ws.rs.core.Application {
 			CountWords cw = new CountWords(sentence);
 		  cw.getWords().forEach((k,v) -> jsonObject.put(k, v));
 		  System.out.println("****** --- JSON : " + jsonObject.toString());
-			return Response.status(200).entity(jsonObject)
-					           .header("Access-Control-Allow-Orgin", "http://swagger.io")
-					           .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+			return Response.ok().entity(jsonObject)
+					 .header("Access-Control-Allow-Orgin", "*")
+				 	 .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
 					 					 .build();
 		}
 		else {
@@ -76,9 +78,9 @@ public class SentenceService extends javax.ws.rs.core.Application {
 			JSONObject jsonObject = new JSONObject();
 			CountWords cw = new CountWords(sentence);
 		  cw.mapSorter(cw.getWords(), sortType).forEach((k,v) -> jsonObject.put(k, v));
-			return Response.status(200).entity(jsonObject)
-          											 .header("Access-Control-Allow-Orgin", "http://swagger.io")
-        											 	 .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+			return Response.ok().entity(jsonObject)
+          											 .header("Access-Control-Allow-Orgin", "*")
+        											 	 .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
         											 	 .build();
 		}
 		else {
